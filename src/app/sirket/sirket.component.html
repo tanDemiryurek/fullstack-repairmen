@@ -1,0 +1,246 @@
+<div class="d-grid gap-2">
+    <button class="btn btn-primary" type="button">Bilgileri Düzenle</button>
+    <button class="btn btn-primary" type="button">Randevu İstekleri</button>
+  </div>
+
+  
+
+  <!DOCTYPE html>
+  <html lang="tr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İşyeri Bilgileri</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .container {
+        max-width: 600px;
+        margin: 20px auto;
+      }
+      form {
+        border: 1px solid #ccc;
+        background-color: #f2f2f2;
+        padding: 20px;
+        border-radius: 5px;
+      }
+      .form-group {
+        margin-bottom: 20px;
+      }
+      .form-group label {
+        display: block;
+        font-weight: bold;
+      }
+      .form-group input, .form-group textarea {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      .form-group textarea {
+        resize: vertical;
+      }
+      .form-group .file-input {
+        display: block;
+        margin-top: 5px;
+      }
+      .time-slots {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: -5px;
+        margin-right: -5px;
+      }
+      .time-slot {
+        flex-basis: calc(33.333% - 10px);
+        margin: 5px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .time-slot.selected {
+        background-color: #007bff;
+        color: white;
+      }
+      .btn {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .btn:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>İşyeri Bilgileri</h1>
+      <form>
+        <div class="form-group">
+          <label for="name">İşyeri Adı:</label>
+          <input type="text" id="name" name="name" placeholder="İşyeri adınızı girin...">
+        </div>
+        <div class="form-group">
+          <label for="address">Adres:</label>
+          <textarea id="address" name="address" rows="4" placeholder="İşyeri adresinizi girin..."></textarea>
+        </div>
+        <div class="form-group">
+          <label for="phone">Telefon:</label>
+          <input type="text" id="phone" name="phone" placeholder="İşyeri telefon numaranızı girin...">
+        </div>
+        <div class="form-group">
+          <label for="email">E-posta:</label>
+          <input type="email" id="email" name="email" placeholder="İşyeri e-posta adresinizi girin...">
+        </div>
+        <div class="form-group">
+          <label for="services">Hizmetler:</label>
+          <textarea id="services" name="services" rows="4" placeholder="İşyerinin sunduğu hizmetleri girin..."></textarea>
+        </div>
+        <div class="form-group">
+          <label for="activeHours">Aktif Randevu Saatleri:</label>
+          <div class="time-slots">
+            <div class="time-slot">10:00 - 12:00</div>
+            <div class="time-slot">12:00 - 14:00</div>
+            <div class="time-slot">14:00 - 16:00</div>
+            <div class="time-slot">16:00 - 18:00</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="photo">Fotoğraf:</label>
+          <input type="file" id="photo" name="photo" accept="image/*" class="file-input">
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn" id="saveBtn">Bilgileri Kaydet</button>
+        </div>
+      </form>
+    </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const timeSlots = document.querySelectorAll('.time-slot');
+        const saveBtn = document.getElementById('saveBtn');
+  
+        timeSlots.forEach(slot => {
+          slot.addEventListener('click', function() {
+            timeSlots.forEach(slot => slot.classList.remove('selected'));
+            this.classList.add('selected');
+            saveBtn.style.backgroundColor = '#007bff';
+          });
+        });
+      });
+    </script>
+  </body>
+  </html>
+  
+
+
+
+ 
+
+
+  <!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tamirci Başvuruları</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    tr:hover {
+      background-color: #f5f5f5;
+    }
+    .approve-button, .reject-button {
+      padding: 6px 12px;
+      cursor: pointer;
+    }
+    .approve-button {
+      background-color: #28a745;
+      color: white;
+      border: none;
+    }
+    .reject-button {
+      background-color: #dc3545;
+      color: white;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Randevu İstekleri</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Ad</th>
+          <th>Soyad</th>
+          <th>Sorun</th>
+          <th>Konum</th>
+          <th>Randevu Tarihi</th>
+          <th>Randevu Saati</th>
+          <th>İşlem</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Çağla</td>
+          <td>Aydın</td>
+          <td>Doğalgaz kombisi çalışmıyor</td>
+          <td>Örnek mah. örnek sk. No:13 Kat:5 Daire:15 Beyoğlu/İstanbul</td>
+          <td>12.04.2024</td>
+          <td>14:00-16.00</td>
+          <td>
+            <button class="approve-button">Onayla</button>
+            <button class="reject-button">Reddet</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Mehmet</td>
+          <td>Uslu</td>
+          <td>Doğalgaz kombisi çalışmıyor</td>
+          <td>Örnek mah. örnek sk. No:13 Kat:5 Daire:15 Beyoğlu/İstanbul</td>
+          <td>13.04.2024</td>
+          <td>10:00-12:00</td>
+          <td>
+            <button class="approve-button">Onayla</button>
+            <button class="reject-button">Reddet</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Ayşe</td>
+          <td>Kaya</td>
+          <td>Doğalgaz kombisi çalışmıyor</td>
+          <td>Örnek mah. örnek sk. No:13 Kat:5 Daire:15 Beyoğlu/İstanbul</td>
+          <td>14.04.2024</td>
+          <td>12.00-14.00</td>
+          <td>
+            <button class="approve-button">Onayla</button>
+            <button class="reject-button">Reddet</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

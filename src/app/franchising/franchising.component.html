@@ -1,0 +1,30 @@
+<div class="container">
+  <form #companyForm="ngForm" (ngSubmit)="onSubmit(companyForm)">
+    <h2>Şirket Bilgileri</h2>
+    <div class="form-group">
+      <label for="companyName">Şirket Adı:</label>
+      <input type="text" id="companyName" name="companyName" placeholder="Şirket adını girin..." ngModel>
+    </div>
+    <div class="form-group">
+      <label for="services">Sunulan Hizmetler:</label>
+      <input type="text" id="services" name="services" placeholder="Sunulan hizmetleri girin..." ngModel>
+    </div>
+    <div class="form-group">
+      <label for="email">E-posta:</label>
+      <input type="email" id="email" name="email" placeholder="E-posta adresini girin..." ngModel>
+    </div>
+    <div class="form-group">
+      <label for="phone">Telefon Numarası:</label>
+      <input type="text" id="phone" name="phone" placeholder="Telefon numarasını girin..." ngModel>
+    </div>
+    <div class="form-group">
+      <label for="location">Konum:</label>
+      <input type="text" id="location" name="location" placeholder="Konumu girin..." ngModel>
+    </div>
+    <div class="form-group">
+      <label for="description">Açıklama:</label>
+      <textarea id="description" name="description" placeholder="Açıklamayı girin..." ngModel></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Gönder</button>
+  </form>
+</div>

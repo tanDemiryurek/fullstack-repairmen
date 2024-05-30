@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Başvuru Listesi ve Mevcut Şirketler</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1 class="mt-5">Başvuru Listesi</h1>
+    <table class="table mt-3">
+      <thead>
+        <tr>
+          <th scope="col">Ad</th>
+          <th scope="col">Soyad</th>
+          <th scope="col">Şirket İsmi</th>
+          <th scope="col">Ayrıntılar</th>
+          <th scope="col">İşlem</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let request of companyRequests">
+          <td>{{ request.user.firstName }}</td>
+          <td>{{ request.user.lastName }}</td>
+          <td>{{ request.companyName }}</td>
+          <td>
+            <button type="button" class="btn btn-info">Ayrıntılı Bilgi</button>
+          </td>
+          <td>
+            <button type="button" class="btn btn-success" (click)="approveRequest(request.id)">Onayla</button>
+            <button type="button" class="btn btn-danger" (click)="rejectRequest(request.id)">Reddet</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 class="mt-5">Mevcut Şirketler</h2>
+    <table class="table mt-3">
+      <thead>
+        <tr>
+          <th scope="col">Şirket İsmi</th>
+          <th scope="col">İşlem</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let company of approvedCompanies">
+          <td>{{ company.companyName }}</td>
+          <td>
+            <button type="button" class="btn btn-danger" (click)="removeCompany(company.id)">Çıkar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+@media screen and (max-width: 768px) {
+    .container {
+      margin-left: 0;
+    }
+    .row {
+      margin-left: 0;
+    }
+  }
+  

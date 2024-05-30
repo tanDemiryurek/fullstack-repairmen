@@ -1,0 +1,30 @@
+<div class="container">
+  <form #authForm="ngForm" (ngSubmit)="handleAuth(authForm)">
+    <h3>{{ isLoginMode ? "Giriş Yap" : "Hesap Oluştur" }}</h3>
+
+    <div *ngIf="!isLoginMode" class="mb-3">
+      <label for="firstName" class="form-label">Ad:</label>
+      <input type="text" required ngModel name="firstName" class="form-control" id="firstName" placeholder="Adınızı giriniz">
+      
+      <label for="lastName" class="form-label">Soyad:</label>
+      <input type="text" required ngModel name="lastName" class="form-control" id="lastName" placeholder="Soyadınızı giriniz">
+    </div>
+
+    <div class="mb-3">
+      <label for="email" class="form-label">E-mail adresi:</label>
+      <input type="email" required email ngModel name="email" class="form-control" id="email" placeholder="E-mail adresinizi giriniz">
+      <div id="emailHelp" class="form-text"></div>
+    </div>
+
+    <div class="mb-3">
+      <label for="password" class="form-label">Şifre:</label>
+      <input type="password" required minlength="6" ngModel name="password" class="form-control" id="password" placeholder="Şifrenizi giriniz">
+    </div>
+    <div class="d-grid gap-2">
+      <button type="submit" class="btn btn-primary">{{ isLoginMode ? "Giriş Yap" : "Hesap Oluştur" }}</button>
+      <button type="button" class="btn btn-outline-primary" (click)="toggleMode()">
+        {{ isLoginMode ? "Henüz Hesabım Yok" : "Zaten Hesabım Var" }}
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,49 @@
+<div class="container">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a routerLink="/" class="navbar-brand">tamirvekurulum</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/">Anasayfa</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="goToServicePage()">Hizmetler</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="goToContactaboutusPage()">İletişim</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="goToContactaboutusPage()">Hakkımızda</a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/randevusorgula" class="nav-link">Randevu Sorgula</a>
+          </li>
+          <li class="nav-item" *ngIf="role === 'USER'">
+            <a routerLink="/franchising" class="nav-link">Şirketinle Başvur</a>
+          </li>
+          <li class="nav-item" *ngIf="role === 'ADMIN'">
+            <a routerLink="/admin" class="nav-link">Admin Page</a>
+          </li>
+          <li class="nav-item" *ngIf="role === 'COMPANY'">
+            <a routerLink="/company" class="nav-link">Company Page</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item" *ngIf="!role">
+            <a routerLink="/auth" class="nav-link">Kayıt/Giriş</a>
+          </li>
+          <li class="nav-item" *ngIf="role">
+            <span class="nav-link">Role: {{ role }}</span>
+          </li>
+          <li class="nav-item" *ngIf="role">
+            <a class="nav-link" (click)="logout()">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>

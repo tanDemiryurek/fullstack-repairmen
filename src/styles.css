@@ -1,0 +1,40 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  .title {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+  
+  .description {
+    font-size: 1.2em;
+    line-height: 1.5;
+  }
+  
+  .section-title {
+    font-size: 1.8em;
+    margin-top: 30px;
+    color: #000000;
+  }
+  
+  .service-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 10px;
+  }
+  
+  .service-list li {
+    margin-bottom: 5px;
+  }
+  
+  .contact-info {
+    font-weight: bold;
+    color: #000000;  }

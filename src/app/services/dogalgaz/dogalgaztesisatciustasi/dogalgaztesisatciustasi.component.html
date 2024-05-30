@@ -1,0 +1,108 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doğalgaz Tesisatçı Ustası</title>
+</head>
+
+<body>
+    <header>
+        <h1>Doğalgaz Tesisatçı Ustası</h1>
+    </header>
+    <main>
+        <section id="about">
+            <h2>Hakkımızda</h2>
+            <p>Doğalgaz Tesisatçı Ustası, İstanbul Ataşehir merkezli, Şeker Yapı Mühendislik bünyesinde sıhhi ve mekanik tesisat alanında hizmet vermektedir. 25 yıllık tecrübesiyle (2019 itibari ile) sayısız projelerde görevler üstlenmiş Ahmet Şeker tarafından kurulmuştur.</p>
+            <p>Tesisatçı Ahmet Usta, uzun yıllardır tesisat sektöründe hizmet veren İstanbul Anadolu yakası bütün ilçelerine ve mahallelerine destek verecek usta kadrosuna sahip, geniş müşteri kitlesiyle ve referanslarıyla, Tesisat problemlerinize çözüm ortağı olmaya devam eden bir şirkettir.</p>
+            <p>Sıhhi tesisat, hayatımızda çok önemli bir yere sahip olan, fakat ciddi bir arıza ortaya çıkmayana kadar dikkate almadığımız tesisat bileşenleridir. Genel olarak insanlar, sıhhi tesisat arızaları göz ile görünür veya kullanılmaz hale gelinceye kadar tamirat ve servis çağırma eğiliminde olmazlar.</p>
+            <p>İşte ne zaman ortaya tesisat ile ilgili sorunlar çıkmaya başlar, hemen bir tesisatçı aramaya başlarlar. Kimi zaman tanıdıklarına telefon edip tesisatçı çağırırlar kimi zaman internetten arama motorları sayesinde tesisatçı ararlar. Biz, tanıdıklarımıza tesisatlarla ilgili sorunlarda hizmet verdiğimiz gibi, tesisatçı arayanlara da hizmet vermek için internette ki yerimizi almaktayız. Amacımız sizlere kolayca ulaşmak ve işlerinizi yapmaktır.</p>        </section>
+        <section id="services">
+            <h2>Hizmetler</h2>
+            <ul>
+                <li>Doğalgaz Tesisatçısı</li>
+                <li>Doğalgaz Montajı</li>
+                <li>Doğalgaz Bakımı</li>
+            </ul>
+        </section>
+        <section id="information">
+            <h2>İletişim</h2>
+            <p>Bizle irtibata geç: dogalgaztesisatciustasi&#64;example.com</p>
+            <p>Doğalgaz Tesisatçı Ustası: <a href="tel:05323497584">0532 349 7584</a></p>
+        </section>
+        <section id="location">
+            <h2>Konum</h2>
+            <p>Mimar Sinan Mh. Namık Kemal Cd. İbrahim Sk. No:12/1, Ataşehir / İSTANBUL</p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3011.920180753449!2d29.15442687519561!3d40.983228620968276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cacf5f493df737%3A0xb9bbf25294f3a0da!2sMimar%20Sinan%2C%20Nam%C4%B1k%20Kemal%20Cd.%20No%3A12%20D%3A1%2C%2034779%20Dudullu%20Osb%2FAta%C5%9Fehir%2F%C4%B0stanbul!5e0!3m2!1str!2str!4v1713911702077!5m2!1str!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+        <section id="comments">
+            <h2>Yorumlar</h2>
+            <p>Yorumlar buraya</p>
+        </section>
+        <section id="comments">
+            <h2>Yorum yap</h2>
+            <ul class="comment-list" id="comment-list">
+                <!-- Yorumlar buraya eklenecek -->
+            </ul>
+            <form class="comment-form" id="comment-form">
+                <label for="name">Adınız:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="comment">Yorumunuz:</label>
+                <textarea id="comment" name="comment" required></textarea>
+                <app-star-rating [maxRating]="5" [currentRating]="4" (ratingClicked)="onRatingClicked($event)"></app-star-rating>
+                <button type="submit">Gönder</button>
+            </form>
+        </section>
+    </main>
+</body>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Popup</title>
+
+</head>
+
+<body>
+    <div class="popup">
+        <h2>Rezervasyon yap</h2>
+        <form id="bookingForm">
+            <div class="form-group">
+                <label for="name">Ad ve Soyad:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Telefon no:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Adres:</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+            <div class="form-group">
+                <label for="problem">Açıklama:</label>
+                <textarea id="problem" name="problem" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="datetime">Tarih ve Saat:</label>
+                <input type="datetime-local" id="datetime" name="datetime" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Rezervasyon yap</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('bookingForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Booking submitted successfully!');
+            this.reset();
+        });
+    </script>
+</body>
+<footer>
+    <p>&copy; 2024 tamiratvekurulum</p>
+</footer>
+</html>

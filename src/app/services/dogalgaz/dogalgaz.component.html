@@ -1,0 +1,22 @@
+<h2 class="section-title">Doğalgaz ve Bakım</h2>
+
+<div class="row">
+  <div class="col-md-4" *ngFor="let company of approvedCompanies">
+    <div class="card">
+      <img src="https://via.placeholder.com/150" class="card-img-top" alt="Company Image">
+      <div class="card-body">
+        <h5 class="card-title">{{ company.companyName }}</h5>
+        <p class="card-text">{{ company.location }}</p>
+        <div class="ratings">
+          <span class="star">&#9733;</span>
+          <span class="star">&#9733;</span>
+          <span class="star">&#9733;</span>
+          <span class="star">&#9733;</span>
+          <span class="star">&#9733;</span>
+          <span class="rating-number">(4.5)</span>
+        </div>
+        <a [routerLink]="['/services/dogalgaz', formatCompanyName(company.companyName)]" class="btn btn-primary">Detaylı Bilgi</a>
+      </div>
+    </div>
+  </div>
+</div>

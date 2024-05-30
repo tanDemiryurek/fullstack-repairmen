@@ -1,0 +1,24 @@
+
+.navbar-brand {
+    color: #e34d0d; 
+    font-size: 24px; 
+  }
+  
+  .nav-link {
+    color: #e34d0d !important; 
+    font-size: 18px; 
+  }
+  
+  .nav-link:hover {
+    color: #3320df !important;
+  }
+
+  .navbar-toggler-icon {
+    background-color: #d1cfce;
+  }
+  
+
+  router-outlet {
+    padding: 20px; 
+  }
+  
